@@ -1,103 +1,73 @@
-import Image from "next/image";
+import Link from "next/link";
 
-export default function Home() {
+export default function HomePage() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm/6 text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-[family-name:var(--font-geist-mono)] font-semibold">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
-
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
-        </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+    <div className="p-8">
+      <h1 className="text-2xl font-bold mb-4">Questions</h1>
+      <ul className="list-disc pl-5 space-y-2">
+        <li>
+          <Link href="/q1" className="text-blue-500 hover:underline">
+            Q1 - Find missing numbers
+          </Link>
+          <p>
+            Given the array of n numbers find the missing number. Implement the
+            `handleFindClick` function
+          </p>
+        </li>
+        <li>
+          <Link href="/q2" className="text-blue-500 hover:underline">
+            Q2 - High Order Component
+          </Link>
+          <p>
+            Write a high order component that shows a loading indicator while
+            the component is loading.
+            <br />
+            1- Improve the code readability and maintainability.
+            <br />
+            2- Handle potential errors more gracefully.
+          </p>
+        </li>
+        <li>
+          <Link href="/q3" className="text-blue-500 hover:underline">
+            Q3 - Class component or Functional component
+          </Link>
+          <p>
+            Refactor the following code for -
+            <br />
+            1- Use functional components and hooks instead of class components.
+            <br />
+            2- Improve the code readability and maintainability.
+            <br />
+            3- Handle potential errors more gracefully.
+            <br />
+            4- Optimize the rendering of the user list.
+          </p>
+        </li>
+        <li>
+          <Link href="/q4" className="text-blue-500 hover:underline">
+            Q4 - Sales Report
+          </Link>
+          <p>
+            Implement the `generateReport` function to generate a sales report
+            and complete the UI. Example data is given inside the component.
+          </p>
+        </li>
+        <li>
+          <Link href="/q5" className="text-blue-500 hover:underline">
+            Q5 - Refactoring the code
+          </Link>
+          <p>
+            Refactor the following code for -
+            <br />
+            1- Improve efficiency. <br />
+            2- Make it more readable and maintainable. <br />
+            3- Handle potential errors in data (e.g., negative stock). <br />
+            4- Separate the logic into more modular and reusable functions.{" "}
+            <br />
+            5- Utilize ES6+ features where appropriate.
+          </p>
+        </li>
+      </ul>
     </div>
   );
 }

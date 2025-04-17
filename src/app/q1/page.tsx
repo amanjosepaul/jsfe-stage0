@@ -35,8 +35,27 @@ export default function NumbersPage() {
   };
 
   const handleFindClick = () => {
-    const randomNumber = Math.floor(Math.random() * 101); // Generates a random integer between 0 and 100
-    setNumber(randomNumber);
+    let sortedArr = [...new Set(inputArray.split(""))].sort(
+      (a, b) => Number(a) - Number(b)
+    );
+
+    for (let i = 0; i < sortedArr.length; i++) {
+      let curNum = Number(sortedArr[i]);
+      let nextNum = Number(sortedArr[i + 1]);
+      let prevNum = Number(sortedArr[i - 1]);
+
+      if (
+        (i == 0 && curNum + 1 !== nextNum) ||
+        (i !== sortedArr.length && i !== 0 && curNum + 1 !== nextNum && nextNum)
+      ) {
+        setNumber(curNum + 1);
+        break;
+      } else if (i == sortedArr.length - 1 && curNum !== prevNum + 1) {
+        setNumber(curNum - 1);
+        break;
+      }
+    }
+  
   };
 
   return (
